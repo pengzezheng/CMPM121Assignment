@@ -8,17 +8,17 @@ public class Player : MonoBehaviour
     float speed = 3;
     float rotationSpeed = 80;
     private Animator anima;
-    GameObject particleSys;
-    GameObject particleSys2;
+    //GameObject particleSys;
+    // GameObject particleSys2;
     public int count = 0;
     // Start is called before the first frame update
     void Start()
     {
         anima = GetComponent<Animator>();
-        particleSys = GameObject.Find("PickUpEffect");       
+        /*particleSys = GameObject.Find("PickUpEffect");       
         particleSys2 = GameObject.Find("PickUpEffect2");       
         particleSys.SetActive(false);
-        particleSys2.SetActive(false);
+        particleSys2.SetActive(false);*/
     }
 
     // Update is called once per frame
@@ -55,16 +55,16 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.name == "Keycard")
         {
-            particleSys.transform.position = other.gameObject.transform.position;           
-            particleSys.SetActive(true); 
+            //particleSys.transform.position = other.gameObject.transform.position;           
+            //particleSys.SetActive(true); 
             Destroy(other.gameObject);
             count++;
         }
 
         if (other.gameObject.name == "Keycard2")
         {
-            particleSys2.transform.position = other.gameObject.transform.position;
-            particleSys2.SetActive(true);
+            //particleSys2.transform.position = other.gameObject.transform.position;
+            //particleSys2.SetActive(true);
             Destroy(other.gameObject);
             count++;
         }

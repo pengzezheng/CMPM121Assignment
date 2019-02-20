@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
+    public ParticleSystem part;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,13 @@ public class Collectable : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Instantiate(part, transform.position, Quaternion.identity);
+        }
     }
 }
